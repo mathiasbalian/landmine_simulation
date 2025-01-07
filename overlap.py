@@ -1,7 +1,7 @@
 import os
 import random
 from PIL import Image
-from utils import apply_fog, reduce_lighting
+from utils import apply_fog, reduce_lighting, apply_weather_overlay
 
 
 def overlay_images(landmine_dir, landscape_dir,
@@ -47,6 +47,8 @@ def overlay_images(landmine_dir, landscape_dir,
             print(f"Saved overlay image to {output_path}")
             apply_fog(output_path)
             reduce_lighting(output_path)
+            apply_weather_overlay(output_path, "rain")
+            apply_weather_overlay(output_path, "snow")
 
 
 landmine_dir = "./landmines"
